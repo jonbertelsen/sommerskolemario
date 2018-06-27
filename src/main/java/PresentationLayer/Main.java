@@ -13,9 +13,13 @@ public class Main {
     
     public static void main(String[] args) {
         System.out.println("Velkommen til Marios Pizzabar");
+        
+        FunctionLayer.Menukort menu = new FunctionLayer.Menukort();
+                
         try
         {
-            DataLayer.MenuMapper.getMenu();
+            
+            System.out.println(DataLayer.MenuMapper.getMenu().toString());
         }
         catch (Exception ex)
         {

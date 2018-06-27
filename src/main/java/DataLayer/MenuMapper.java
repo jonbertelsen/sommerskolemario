@@ -5,6 +5,7 @@
  */
 package DataLayer;
 
+import FunctionLayer.Pizza;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,8 +20,10 @@ import java.util.ArrayList;
 public class MenuMapper {
     
     
-    public static void getMenu() throws Exception
+    public static ArrayList<Pizza> getMenu() throws Exception
     {
+        ArrayList<Pizza> pizzaliste = new ArrayList();
+        
         try 
         {
             Connection con = Connector.connection();
@@ -30,10 +33,17 @@ public class MenuMapper {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) 
             {
+                
                 int pizzaId = rs.getInt("pizza_id");
                 String pizzaNavn = rs.getString("navn");
-                System.out.println("Pizza_id: " + pizzaId + ": " + pizzaNavn);    
+                String pizzaBeskrivelse = rs.getString("beskrivelse");
+                int pris = rs.getInt("pris");
+                
+                pizzaliste.add(new Pizza(pizzaId, pizzaNavn, pris, pizzaBeskrivelse));
+                
+               // System.out.println("Pizza_id: " + pizzaId + ": " + pizzaNavn);    
             }
+            return pizzaliste;
         } 
         catch (SQLException | ClassNotFoundException ex) 
         {
