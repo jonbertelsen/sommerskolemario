@@ -5,10 +5,18 @@
  */
 package DataLayer;
 
+import FunctionLayer.Ordre;
+
 /**
  *
  * @author jobe
  */
 public class OrdreFacade {
+    
+    public static Ordre createOrder(Ordre ordreObject) throws Exception
+    {
+        return OrdreMapper.createOrder(ordreObject);
+    }
+    
     
 }

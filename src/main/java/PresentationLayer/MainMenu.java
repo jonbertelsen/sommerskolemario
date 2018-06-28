@@ -5,6 +5,7 @@
  */
 package PresentationLayer;
 
+import FunctionLayer.Ordre;
 import java.util.Scanner;
 
 /**
@@ -24,6 +25,7 @@ public class MainMenu {
         {  
             System.out.println("Hovedmenu:");
             System.out.println("1. Vis menukort");
+            System.out.println("2. Opret ordre");
             System.out.println("5. Afslut");
             
             String inputString = console.next();
@@ -31,6 +33,7 @@ public class MainMenu {
             switch (inputString)
             {
                 case "1": visMenukort();break;
+                case "2": createOrder();break;
                 case "5": afslut = true;break;
             
             }
@@ -51,6 +54,23 @@ public class MainMenu {
             System.out.println("Der er sket en fejl: " + ex.getMessage());
         }
     
+    }
+    
+    public static void createOrder()
+    {
+        Ordre nyOrdre;
+        
+        try
+        {
+            nyOrdre = DataLayer.OrdreFacade.createOrder(new Ordre(1140, 157, 1));
+            System.out.println(nyOrdre.toString());
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+        
+        
     }
     
 }

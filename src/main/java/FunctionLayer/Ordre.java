@@ -23,6 +23,20 @@ public class Ordre {
         this.kunde_id = kunde_id;
     }
 
+    @Override
+    public String toString() {
+        return "Ordre{" + "ordre_id=" + ordre_id + ", afhentningstid=" + afhentningstid + ", samletpris=" + samletpris + ", kunde_id=" + kunde_id + '}';
+    }
+
+    public Ordre(int afhentningstid, int samletpris, int kunde_id) {
+        this.afhentningstid = afhentningstid;
+        this.samletpris = samletpris;
+        this.kunde_id = kunde_id;
+    }
+
+    
+    
+    
     public int getOrdre_id() {
         return ordre_id;
     }

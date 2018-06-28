@@ -20,6 +20,5 @@ public class MenukortUI {
         for (Pizza pizza : pizzaliste) {
             System.out.println(pizza.getPizzaID() + ": "+ pizza.getNavn());   
         }
-    
     }
 }
