@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class MenuMapper {
     
     
-    public static ArrayList<Pizza> getMenu() throws Exception
+    protected static ArrayList<Pizza> getMenu() throws Exception
     {
         ArrayList<Pizza> pizzaliste = new ArrayList();
         

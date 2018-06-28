@@ -21,7 +21,7 @@ public class Menukort {
       {
           try
           {
-            pizzaliste = DataLayer.MenuMapper.getMenu();
+            pizzaliste = DataLayer.MenuFacade.getMenu();
           }
           catch (Exception ex)
           {
