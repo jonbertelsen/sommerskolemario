@@ -5,6 +5,7 @@
  */
 package PresentationLayer;
 
+import FunctionLayer.Menukort;
 import FunctionLayer.Ordre;
 import java.util.Scanner;
 
@@ -14,8 +15,11 @@ import java.util.Scanner;
  */
 public class MainMenu {
     
+    
+    
     public static void showMainMenu()
     {
+        Menukort.initierMenukort();
         
         boolean afslut = false;
         
@@ -45,9 +49,10 @@ public class MainMenu {
     {
         // FunctionLayer.Menukort menu = new FunctionLayer.Menukort();
          
+        
         try
         {   
-            MenukortUI.visMenukort(DataLayer.MenuFacade.getMenu())  ;
+            MenukortUI.visMenukort(Menukort.getPizzaliste());
         }
         catch (Exception ex)
         {

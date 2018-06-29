@@ -16,7 +16,7 @@ public class Menukort {
     
     private static ArrayList<Pizza> pizzaliste;
 
-    public Menukort() {
+    public static void initierMenukort() {
       if (pizzaliste == null)
       {
           try
@@ -28,6 +28,10 @@ public class Menukort {
               System.out.println(ex);
           }
       }
+    }
+
+    public static ArrayList<Pizza> getPizzaliste() {
+        return pizzaliste;
     }
     
     
